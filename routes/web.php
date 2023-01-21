@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 //    return view('welcome');
+    return \Inertia\Inertia::render('Auth/Login');
+});
+
+Route::get('/welcome', function () {
+//    return view('welcome');
     $user = ['name' => 'wa'];
     return \Inertia\Inertia::render('Welcome',[
         'user' => $user

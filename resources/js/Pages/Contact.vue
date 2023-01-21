@@ -15,7 +15,7 @@ export default {
     // layout: (h, page) => h(Layout, [page]),
 
     // Using shorthand syntax...
-    layout: Layout,
+    // layout: Layout,
 }
 </script>
 
