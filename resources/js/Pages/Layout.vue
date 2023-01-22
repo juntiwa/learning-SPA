@@ -1,26 +1,20 @@
+<script setup>
+import { computed } from 'vue'
+import { usePage } from '@inertiajs/vue3'
+
+const user = computed(() => usePage().props.auth.user)
+</script>
+
 <template>
     <main>
         <header>
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-            <div>
-                <iframe
-                    width="full"
-                    frameborder="none"
-                    scrolling="none"
-                    seamless
-                    src="https://player.simplecast.com/fd0bd2ba-c553-466c-a060-b144797ce369?dark=false"
-                />
+            You are logged in as: {{ user.name }}
+            <div v-if="$page.props.flash.message" class="alert">
+                {{ $page.props.flash.message }}
             </div>
         </header>
-        <article>
+        <div>
             <slot />
-        </article>
+        </div>
     </main>
 </template>
-
-
-<script setup>
-import { Link } from '@inertiajs/vue3'
-</script>

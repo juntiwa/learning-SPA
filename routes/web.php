@@ -18,26 +18,49 @@ Route::get('/', function () {
     return \Inertia\Inertia::render('Auth/Login');
 });
 
+Route::post('/', function () {
+    $user = \App\Models\User::query()->where('email',request()->email)->first();
+
+    //Check password hash
+    if(!$user || !\Illuminate\Support\Facades\Hash::check(request()->password, $user->password)){
+        //Invalid login username or password!
+        return 'Invalid login username or password!';
+    } else {
+        //username & password matches
+        \Illuminate\Support\Facades\Auth::login($user);
+        return redirect()->route('shareData');
+    }
+    return $user;
+})->name('login');
+
 Route::get('/welcome', function () {
 //    return view('welcome');
     $user = ['name' => 'wa'];
-    return \Inertia\Inertia::render('Welcome',[
+    return \Inertia\Inertia::render('Welcome', [
         'user' => $user
     ]);
-});
+})->middleware('auth');
 
 Route::get('/about', function () {
 //    return view('welcome');
     $user = ['name' => 'wa'];
-    return \Inertia\Inertia::render('About',[
+    return \Inertia\Inertia::render('About', [
         'user' => $user
     ]);
-});
+})->middleware('auth');
 
 Route::get('/contact', function () {
 //    return view('welcome');
     $user = ['name' => 'wa'];
-    return \Inertia\Inertia::render('Contact',[
+    return \Inertia\Inertia::render('Contact', [
         'user' => $user
     ]);
-});
+})->middleware('auth');
+
+Route::get('/shareData', function () {
+    $user = ['name' => 'wa'];
+
+    return \Inertia\Inertia::render('ShareData', [
+        'user' => $user
+    ]);
+})->name('shareData')->middleware('auth');
