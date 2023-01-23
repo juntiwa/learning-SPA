@@ -64,3 +64,7 @@ Route::get('/shareData', function () {
         'user' => $user
     ]);
 })->name('shareData')->middleware('auth');
+
+Route::post('/logout', function(){
+   \Illuminate\Support\Facades\Auth::logout();
+});
