@@ -19,10 +19,10 @@ Route::get('/', function () {
 });
 
 Route::post('/', function () {
-    $user = \App\Models\User::query()->where('email',request()->email)->first();
+    $user = \App\Models\User::query()->where('email', request()->email)->first();
 
     //Check password hash
-    if(!$user || !\Illuminate\Support\Facades\Hash::check(request()->password, $user->password)){
+    if (!$user || !\Illuminate\Support\Facades\Hash::check(request()->password, $user->password)) {
         //Invalid login username or password!
         return 'Invalid login username or password!';
     } else {
@@ -65,10 +65,38 @@ Route::get('/shareData', function () {
     ]);
 })->name('shareData')->middleware('auth');
 
-Route::post('/logout', function(){
-   \Illuminate\Support\Facades\Auth::logout();
+Route::post('/logout', function () {
+    \Illuminate\Support\Facades\Auth::logout();
 });
 
-Route::get('/declarative-rendering',function (){
+Route::get('/DeclarativeRendering', function () {
     return \Inertia\Inertia::render('Vue/DeclarativeRendering');
+});
+
+Route::get('/AttributeBindings', function () {
+    return \Inertia\Inertia::render('Vue/AttributeBindings');
+});
+
+Route::get('/EventListeners',function (){
+    return \Inertia\Inertia::render('Vue/EventListeners');
+});
+
+Route::get('/FormBindings',function(){
+    return \Inertia\Inertia::render('Vue/FormBindings');
+});
+
+Route::get('/ConditionalRendering',function (){
+    return \Inertia\Inertia::render('Vue/ConditionalRendering');
+});
+
+Route::get('/ListRendering',function (){
+    return \Inertia\Inertia::render('Vue/ListRendering');
+});
+
+Route::get('/ComputedProperty',function (){
+    return \Inertia\Inertia::render('Vue/ComputedProperty');
+});
+
+Route::get('/LifecycleandTemplateRefs',function (){
+    return \Inertia\Inertia::render('Vue/LifecycleandTemplateRefs');
 });
