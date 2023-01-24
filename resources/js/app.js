@@ -24,6 +24,7 @@ createInertiaApp({
         const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
         let page = pages[`./Pages/${name}.vue`]
         page.default.layout = name.startsWith('Auth/') ? undefined : Layout
+        page.default.layout = name.startsWith('Vue/') ? undefined : Layout
         return page
     },
 

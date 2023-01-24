@@ -68,3 +68,7 @@ Route::get('/shareData', function () {
 Route::post('/logout', function(){
    \Illuminate\Support\Facades\Auth::logout();
 });
+
+Route::get('/declarative-rendering',function (){
+    return \Inertia\Inertia::render('Vue/DeclarativeRendering');
+});
