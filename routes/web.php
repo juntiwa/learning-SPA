@@ -18,6 +18,16 @@ Route::get('/', function () {
     return \Inertia\Inertia::render('Auth/Login');
 });
 
+Route::get('/basic-page-1',function (){
+    return Inertia\Inertia::render('BasicPage');
+});
+Route::get('/basic-page-2',function (){
+    \Inertia\Inertia::share('appName','customName');
+    return Inertia\Inertia::render('BasicPage2');
+});
+Route::get('/basic-page-3',function (){
+    return Inertia\Inertia::render('BasicPage3');
+});
 Route::post('/', function () {
     $user = \App\Models\User::query()->where('email', request()->email)->first();
 

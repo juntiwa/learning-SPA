@@ -8,10 +8,10 @@ import Layout from './Pages/Layout'
 
 createInertiaApp({
 
-    /*resolve: (name) =>
+    resolve: (name) =>
         resolvePageComponent(`./Pages/${name}.vue`,
-            import.meta.glob('./Pages/!**!/!*.vue')
-        ),*/
+            import.meta.glob('./Pages/**/*.vue')
+        ),
 
     /*resolve: name => {
         const pages = import.meta.glob('./Pages/!**!/!*.vue', { eager: true })
@@ -20,13 +20,13 @@ createInertiaApp({
         return page
     },*/
 
-    resolve: name => {
-        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
+    /*resolve: name => {
+        const pages = import.meta.glob('./Pages/!**!/!*.vue', { eager: true })
         let page = pages[`./Pages/${name}.vue`]
         page.default.layout = name.startsWith('Auth/') ? undefined : Layout
         page.default.layout = name.startsWith('Vue/') ? undefined : Layout
         return page
-    },
+    },*/
 
 
 
