@@ -79,38 +79,9 @@ Route::post('/logout', function () {
     \Illuminate\Support\Facades\Auth::logout();
 });
 
-Route::get('/DeclarativeRendering', function () {
-    return \Inertia\Inertia::render('Vue/DeclarativeRendering');
+Route::get('/tutorial', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial');
 });
-
-Route::get('/AttributeBindings', function () {
-    return \Inertia\Inertia::render('Vue/AttributeBindings');
-});
-
-Route::get('/EventListeners',function (){
-    return \Inertia\Inertia::render('Vue/EventListeners');
-});
-
-Route::get('/FormBindings',function(){
-    return \Inertia\Inertia::render('Vue/FormBindings');
-});
-
-Route::get('/ConditionalRendering',function (){
-    return \Inertia\Inertia::render('Vue/ConditionalRendering');
-});
-
-Route::get('/ListRendering',function (){
-    return \Inertia\Inertia::render('Vue/ListRendering');
-});
-
-Route::get('/ComputedProperty',function (){
-    return \Inertia\Inertia::render('Vue/ComputedProperty');
-});
-
-Route::get('/LifecycleandTemplateRefs',function (){
-    return \Inertia\Inertia::render('Vue/LifecycleandTemplateRefs');
-});
-
 Route::get('/ManageArray',function (){
     return Inertia\Inertia::render('Javascript/ManageArray');
 });
