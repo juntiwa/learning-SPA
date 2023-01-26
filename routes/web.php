@@ -110,3 +110,7 @@ Route::get('/ComputedProperty',function (){
 Route::get('/LifecycleandTemplateRefs',function (){
     return \Inertia\Inertia::render('Vue/LifecycleandTemplateRefs');
 });
+
+Route::get('/ManageArray',function (){
+    return Inertia\Inertia::render('Javascript/ManageArray');
+});
