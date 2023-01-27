@@ -14,6 +14,7 @@ import {Link} from "@inertiajs/vue3";
             <Link class="hover:text-rose-600" href="/computedProperty">Computed Property</Link> |
             <Link class="hover:text-rose-600" href="/lifeCycleAndTemplateRef">Lifecycle and Template Refs</Link> |
             <Link class="hover:text-rose-600" href="/watchers">Watchers</Link> |
+            <Link class="hover:text-rose-600" href="/emits">Emits</Link> |
         </header>
         <article class="p-2">
             <slot/>

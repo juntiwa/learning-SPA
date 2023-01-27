@@ -1,4 +1,10 @@
 <template>
+<!--    <input :type="type"
+           :name="name"
+           :id="name"
+           :value="modelValue"
+           @input="handleChange"
+           class="border p-2 rounded"/>-->
     <input :type="type"
            :name="name"
            :id="name"
@@ -9,6 +15,10 @@
 
 <script setup>
 defineProps(['type', 'name', 'modelValue'])
+const emit = defineEmits(['customChange'])
+const handleChange = (event) => {
+    emit('customChange', event.target.value)
+}
 </script>
 
 <style scoped>

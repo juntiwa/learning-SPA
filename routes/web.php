@@ -112,3 +112,6 @@ Route::get('/lifeCycleAndTemplateRef', function(){
 Route::get('/watchers', function(){
     return \Inertia\Inertia::render('Vue/Tutorial/Watchers');
 });
+Route::get('/emits', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/Emits');
+});

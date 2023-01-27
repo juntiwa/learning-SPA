@@ -43,7 +43,6 @@ function removeTodo(todo) {
         <form @submit.prevent="addTodo">
             <InputElement v-model="newTodo" class="border p-2 mr-2 rounded"/>
             <ButtonElement class="bg-orange-300 p-2 rounded">Add Todo</ButtonElement>
-
         </form>
         <ul>
             <li v-for="todo in todos" :key="todo.id">
