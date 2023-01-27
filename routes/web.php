@@ -79,9 +79,36 @@ Route::post('/logout', function () {
     \Illuminate\Support\Facades\Auth::logout();
 });
 
-Route::get('/tutorial', function(){
-    return \Inertia\Inertia::render('Vue/Tutorial');
-});
 Route::get('/ManageArray',function (){
     return Inertia\Inertia::render('Javascript/ManageArray');
+});
+
+//vue tutorial
+Route::get('/declarativeRendering', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/DeclarativeRendering');
+});
+
+Route::get('/attributeBindings', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/AttributeBindings');
+});
+Route::get('/eventListeners', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/EventListeners');
+});
+Route::get('/formBindings', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/FormBindings');
+});
+Route::get('/conditionalRendering', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/ConditionalRendering');
+});
+Route::get('/listRendering', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/ListRendering');
+});
+Route::get('/computedProperty', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/ComputedProperty');
+});
+Route::get('/lifeCycleAndTemplateRef', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/LifeCycleAndTemplateRef');
+});
+Route::get('/watchers', function(){
+    return \Inertia\Inertia::render('Vue/Tutorial/Watchers');
 });
