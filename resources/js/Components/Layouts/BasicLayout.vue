@@ -22,7 +22,7 @@
         <slot />
     </div>
     <div class="p-4 bg-amber-400">
-        footter
+        footer
     </div>
 </template>
 
