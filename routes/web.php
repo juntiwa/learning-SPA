@@ -40,7 +40,7 @@ Route::post('/', function () {
         \Illuminate\Support\Facades\Auth::login($user);
         return redirect()->route('shareData');
     }
-    return $user;
+//    return $user;
 })->name('login');
 
 Route::get('/welcome', function () {
@@ -114,4 +114,8 @@ Route::get('/watchers', function(){
 });
 Route::get('/emits', function(){
     return \Inertia\Inertia::render('Vue/Tutorial/Emits');
+});
+
+Route::get('/formEmit',function (){
+   return \Inertia\Inertia::render('Vue/EmitInputComp');
 });

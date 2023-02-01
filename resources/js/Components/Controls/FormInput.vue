@@ -7,7 +7,7 @@
         >{{ label }}</label>
         <input
             class="w-full px-2 py-2 rounded border"
-           :id="name"
+            :id="name"
             :readonly="readonly"
             :disabled="disabled"
             :type="type"
@@ -23,22 +23,22 @@
 </template>
 
 <script setup>
-    defineProps({
-        name: {type: String, required: true},
-        disabled: {type: Boolean, default: false},
-        readonly: {type: Boolean, default: false},
-        type: {type: String, default: 'text'},
-        label: {type: [String,null], default: null},
-        error: {type: [String,null], default: null},
-        modelValue: {type: [String,null], required: true},
-    });
+defineProps({
+    name: {type: String, required: true},
+    disabled: {type: Boolean, default: false},
+    readonly: {type: Boolean, default: false},
+    type: {type: String, default: 'text'},
+    label: {type: [String, null], default: null},
+    error: {type: [String, null], default: null},
+    modelValue: {type: [String, null], required: true}, //ค่าใน db อาจจะมีค่าที่เป็นค่าว่าง เช่น ไม่กรอกข้อมุลแพ้อาหาร เป็นต้น
+});
 
-    defineEmits(['update:modelValue'])
+defineEmits(['update:modelValue'])
 
-   /* function onInput(event) {
-        console.log(event.target.value);
-        emits('update:modelValue', event.target.value);
-        /!*props.modelValue = event.target.value;
-        props.error = event.target.value;*!/
-    }*/
+/* function onInput(event) {
+     console.log(event.target.value);
+     emits('update:modelValue', event.target.value);
+     /!*props.modelValue = event.target.value;
+     props.error = event.target.value;*!/
+ }*/
 </script>
